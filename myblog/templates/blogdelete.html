@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Blog{% endblock %}
+{% block body_class %}background{% endblock %}
+{% block content %}
+<h1 style="margin:50px">Delete Blog</h1>
+<p class="delete">Are you sure you want to delete "{{ blog.b_title }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger "style="margin-left:60px">Confirm</button>
+    <a href="{% url 'blogdetail' pk=blog.pk %}" class="btn btn-secondary"style="margin-left:10px">Cancel</a>
+</form>
+{% endblock %}

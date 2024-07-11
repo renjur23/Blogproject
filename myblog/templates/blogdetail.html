@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog Detail{% endblock %}
+{% block body_class %}background{% endblock %}
+{% block content %}
+<div class="content-container">
+<h1>{{ blog.b_title }}</h1>
+{% if b_image %}
+<img src="{{ b_image.url }}" alt="..." style="max-width: 600px;">
+ {% endif %}
+<p>{{ blog.b_content }}</p>
+<p>Created at: {{ blog.pub_on }}</p>
+<p>Updated at: {{ blog.update_on }}</p>
+<a href="{% url 'blogupdate' pk=blog.pk %}" class="btn btn-secondary">Edit</a>
+<a href="{% url 'blogdelete' pk=blog.pk %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'bloglist' %}" class="btn btn-primary">Back to Blog List</a>
+</div>
+{% endblock %}
