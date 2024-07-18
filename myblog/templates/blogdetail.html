@@ -5,9 +5,9 @@
 {% block content %}
 <div class="content-container">
 <h1>{{ blog.b_title }}</h1>
-{% if b_image %}
-<img src="{{ b_image.url }}" alt="..." style="max-width: 600px;">
- {% endif %}
+{% if blog.b_image %}
+    <img src="{{ blog.b_image.url }}" alt="..." style="max-width: 600px;">
+{% endif %}
 <p>{{ blog.b_content }}</p>
 <p>Created at: {{ blog.pub_on }}</p>
 <p>Updated at: {{ blog.update_on }}</p>

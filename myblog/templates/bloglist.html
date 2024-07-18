@@ -11,10 +11,6 @@
     <li class="list-group-item">
         <a href="{% url 'blogdetail' pk=blog.pk %}">{{ blog.b_title }}</a>
         <p>{{ blog.b_title|truncatewords:30 }}</p>
-        {% if b_image %}
-        <img src="{{ 
-        b_image.url }}" alt="..." style="max-width: 100px;">
-        {% endif %}
         <a href="{% url 'blogupdate' pk=blog.pk %}" class="btn btn-secondary">Edit</a>
         <a href="{% url 'blogdelete' pk=blog.pk %}" class="btn btn-danger">Delete</a>
     </li>
